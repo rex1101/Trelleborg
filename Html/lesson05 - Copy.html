@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box01 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box02 {
+            width: 200px;
+            /* height: 200px; */
+            background-color: blue;
+        }
+        .box2::after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+        .box03 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .box04 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(154, 35, 165);
+            float: left;
+        }
+        .box05 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(189, 47, 94);
+            float: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box01"></div>
+    <div class="box02">
+        <div class="box04">左边盒子</div>
+        <div class="box05">右边盒子</div>
+    </div>
+    <div class="box03">
+        
+    </div>
+<div><button onclick="window.location.href='https://apps.powerapps.com/play/e/default-0f861177-7722-4f06-8db9-3384e5321a9f/a/48733b68-e54f-4f57-874e-08452ae039bd?tenantId=0f861177-7722-4f06-8db9-3384e5321a9f&hint=388400d2-e2aa-4d77-9bc1-3e9a19262da4&sourcetime=1746768870774?screen=Call_Sap_PO_Detail&EBELN=4500053316'">Approval</button></div>
+</body>
+
+</html>

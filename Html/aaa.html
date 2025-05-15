@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Production Report Work Order</title>
+    <style type="text/css">
+        p {
+            text-align: left;
+            line-height: 17px;
+            margin: 0 auto;
+            margin-bottom: 1px;
+            word-break: break-word;
+        }
+
+        Headertable {
+            table-layout: fixed;
+            border-collapse: collapse;
+            border: 1px solid rgb(151, 127, 63);
+            width: 800px;
+            word-break: break-word;
+            white-space: pre-line;
+        }
+
+        .OrderNO {
+            text-align: left;
+            font-size: 18px;
+            line-height: 48px;
+            table-layout: fixed;
+            width: 100%;
+            width: 800px;
+            border-collapse: collapse;
+            text-align: left;
+            color: white;
+            font-family: Georgia, serif;
+            /* padding: 20px; */
+            font-style: italic;
+            background-color: rgb(151, 127, 63);
+        }
+
+
+        .Maindiv {
+            width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .Logopic {
+            background-size: cover;
+            background-attachment: fixed;
+            border: 1px solid rgb(211, 199, 171);
+            border-radius: 4px;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        .field {
+            text-align: right;
+            font-size: 16px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            font-style: Arial;
+            font-weight: bold;
+            padding-right: 10px;
+            background-color: rgb(211, 199, 171);
+        }
+
+        .field2 {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            font-style: Arial;
+            padding-left: 10px;
+            color: rgb(151, 127, 63);
+        }
+
+        .field3 {
+            text-align: right;
+            font-size: 14px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            font-style: Arial;
+            font-weight: bold;
+            padding-right: 10px;
+            background-color: rgb(151, 127, 63);
+        }
+
+        .line {
+            border: 1px solid rgb(211, 199, 171);
+            border-collapse: collapse;
+        }
+
+        .itemtable {
+            table-layout: fixed;
+            border-collapse: collapse;
+            border: 1px solid rgb(151, 127, 63);
+            width: 800px;
+            word-break: break-word;
+            white-space: pre-line;
+        }
+
+
+        .itemheader {
+            text-align: left;
+            font-size: 11px;
+            line-height: 26px;
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            color: white;
+            width: 800px;
+            font-family: Georgia, serif;
+            /* padding: 20px; */
+            font-style: italic;
+            background-color: rgb(151, 127, 63);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'noto-sans', 'noto-cjk', Arial, "Helvetica Neue", "Segoe UI", freesans, sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Production Report Work Order 生产报工单</h1>
+        <table>
+            <thead>
+            <tr>
+                <th class="field2">Dept 部门</th>
+                <td><input type="text" name="dept" placeholder="部门"></td>
+                <th class="field2">EQ 机台</th>
+                <td><input type="text" name="eq" placeholder="机台"></td>
+                <th class="field2">Rec 记录人</th>
+                <td><input type="text" name="rec" placeholder="记录人"></td>
+            </tr>
+
+            <!-- 其他行以类似方式添加 -->
+            <tr>
+                <th>Dept 部门</th>
+                <td><input type="text" name="dept" placeholder="部门"></td>
+                <th>EQ 机台</th>
+                <td><input type="text" name="eq" placeholder="机台"></td>
+                <th>Rec 记录人</th>
+                <td><input type="text" name="rec" placeholder="记录人"></td>
+            </tr>
+            <!-- ... -->
+        </thead>
+            <tr>
+                <th colspan="4">Sales Order No. 销售订单 / Production No. 生产订单</th>
+            </tr>
+            <tr>
+                <td colspan="4"><input type="text" name="sales_order" placeholder="/000000"> / <input type="text"
+                        name="production_order" placeholder="1036266"></td>
+            </tr>
+
+            <!-- 物料消耗明细 -->
+            <tr>
+                <th colspan="7">物料消耗明细</th>
+            </tr>
+            <tr>
+                <th>Material 物料</th>
+                <th>Material Description 物料描述</th>
+                <th>BOM 单件量</th>
+                <th>Unit 单位</th>
+                <th>BOM 总需量</th>
+                <th>实际使用 批次号</th>
+                <th>实际用量</th>
+            </tr>
+            <!-- 物料数据行 -->
+            <tr>
+                <td>BACKFL421D23T</td>
+                <td>法兰,421ID*23Th</td>
+                <td><input type="number" name="bom_quantity1" value="2"></td>
+                <td>PCE</td>
+                <td><input type="number" name="bom_total1" value="12"></td>
+                <td><input type="text" name="actual_batch1" placeholder="批次号"></td>
+                <td><input type="number" name="actual_usage1" placeholder="实际用量"></td>
+            </tr>
+            <!-- 其他物料行以类似方式添加 -->
+            <!-- ... -->
+
+            <!-- 工作中心 -->
+            <tr>
+                <th colspan="7">工作中心</th>
+            </tr>
+            <tr>
+                <th>工作中心</th>
+                <th>工作中心描述</th>
+                <th>标准人工</th>
+                <th>标准设备</th>
+                <th>实际人工</th>
+                <th>实际设备</th>
+            </tr>
+            <!-- 工作中心数据行 -->
+            <tr>
+                <td>WCIH0101</td>
+                <td>工业管成型</td>
+                <td><input type="number" name="standard_labor1" value="105.42"></td>
+                <td><input type="number" name="standard_equipment1" value="52.68"></td>
+                <td><input type="number" name="actual_labor1" placeholder="实际人工"></td>
+                <td><input type="number" name="actual_equipment1" placeholder="实际设备"></td>
+            </tr>
+            <!-- 其他工作中心行以类似方式添加 -->
+            <!-- ... -->
+        </table>
+</body>
+
+</html>
