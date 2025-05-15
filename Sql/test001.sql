@@ -1,0 +1,7 @@
+SELECT [MANDT]
+      ,[SPRSL]
+      ,[PERSK]
+      ,[AESUB]
+      ,[AETYP]
+      ,[AETXT]
+  FROM [DEV].[dev].[T5S7B]

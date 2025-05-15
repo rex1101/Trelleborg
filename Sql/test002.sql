@@ -1,0 +1,4 @@
+ select VBRK.VKORG,case VBRK.SPART when '01' then 'EEP28' when '02' then 'EEP3C' when '03' then 'EEP16' when '04' then 'EEP9' when '05' then 'EEP21' when '06' then 'EEP14' else isnull(VBRK.SPART,'') end as EEP,BSID.VBELN,BSID.KUNNR,KNA1.NAME1,BSID.BLART,BSID.SHKZG,BSID.ZUONR,BSID.SAKNR,cast(BSID.ZTERM as char) as ZTERM,BSID.BELNR,(case when BSID.SHKZG='S' then BSID.DMBTR else 0-BSID.DMBTR end) as DMBTR,
+             (case when BSID.SHKZG='S' then BSID.WRBTR else 0-BSID.WRBTR end) as WRBTR,BSID.WAERS,BSID.BUDAT, cast(ZFBDT as Datetime)+ZBD1T+ZBD2T+ZBD3T as DueDate from prd.BSID left join prd.VBRK on VBRK.VBELN=BSID.VBELN and VBRK.MANDT=BSID.MANDT 
+             left join prd.KNA1 on BSID.KUNNR=KNA1.KUNNR and KNA1.MANDT=BSID.MANDT where BSID.MANDT=800 and BSID.UMSKS='' and BSID.UMSKZ='' and cast(BSID.BUDAT as datetime) <= cast('" & Keydate & "' as datetime) order by BSID.KUNNR,VBRK.VKORG  
+ 
